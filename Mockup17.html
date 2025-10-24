@@ -25,7 +25,7 @@
       </div>
 
       <button id="btnEnviar" class="btn btn-primary w-100">Enviar Boleta</button>
-      <button id="btnReenviar" class="btn btn-secondary w-100 mt-2">Reenviar Boleta</button>
+      <button id="btnReenviar" class="btn btn-secondary w-100 mt-2" style="display:none;">Reenviar Boleta</button>
     </div>
 
     <div class="panel-box success" id="envio-exitoso" style="display:none;">
@@ -70,6 +70,8 @@
 
       if(validarCorreo(correo)) {
         document.getElementById('envio-exitoso').style.display = 'block';
+        // Mostrar botón de reenviar solo después del primer envío exitoso
+        btnReenviar.style.display = 'block';
       } else {
         document.getElementById('correo-invalido').style.display = 'block';
       }
